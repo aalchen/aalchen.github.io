@@ -1,0 +1,22 @@
+body, html {
+    background-color: teal;
+    background-image: linear-gradient(to bottom right, teal, purple);
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+     
+}
+
+.btn {
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.3) ;
+    font-size: 13px;
+}
+
+.btn-primary {
+    border-color :rgba(0, 0, 0, 0.3);
+}

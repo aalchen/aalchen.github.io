@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RPDR Soundboard</title>
+  <link href="/styles/tailwind.css" rel="stylesheet">
+
+</head>
+<body>
+      <div class="min-h-screen bg-gray-50 bg-opacity-25 flex flex-col justify-center sm:py-12">
+        <h2 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl max-h-screen text-center" >
+          <span class="block">RPDR Soundboard</span>
+          <span class="block text-indigo-600 sm:text-3xl"> &#10024; Your favourite catchphrases &#10024;</span>
+        </h2>
+        
+      <div id="keys" class="keys text-center mt-10">
+        <button data-key="74" id="74" class="rounded-md shadow h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Jasmine Masters</button>
+        <button data-key="65" id="65" class="rounded-md shadow h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Alyssa Edwards</button>
+        <button data-key="71" id="71" class="rounded-md shadow h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Gia Gunn</button>
+      </div> 
+</div>   
+  </div>
+
+  
+
+  <audio data-key="74" src="sounds/jasmine.mp3"></audio>
+  <audio data-key="65" src="sounds/alyssa.mp3"></audio>
+  <audio data-key="71" src="sounds/gia.mp3"></audio>
+
+<script>
+  window.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  });
+
+  window.onload = myMain;
+function myMain() {
+  document.getElementById("keys").onclick = clickaudio;
+}
+function clickaudio(e) {
+  if (e.target.tagName == 'BUTTON') {
+    const audio = document.querySelector(`audio[data-key="${e.target.id}"]`);
+    if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  }
+}
+</script>
+
+
+</body>
+</html>

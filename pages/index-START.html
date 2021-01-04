@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">Jasmine Masters</span>
+    </div>
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">Alyssa Edwards</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">Gia Gunn</span>
+    </div>
+  </div>
+
+  <audio data-key="74" src="sounds/jasmine.mp3"></audio>
+  <audio data-key="65" src="sounds/alyssa.mp3"></audio>
+  <audio data-key="71" src="sounds/gia.mp3"></audio>
+
+<script>
+  window.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  });
+</script>
+
+
+</body>
+</html>
